@@ -1,0 +1,21 @@
+
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2>Know of a rest needing a home?</h2>
+
+  <p *ngIf="(error)">{{ error.message }}</p>
+  <p *ngIf="(error)">{{ error.errmsg }}</p>
+  
+  <a [routerLink]="['/']" >Home</a>
+
+  <h4></h4>
+  <form (submit)="onSubmit()">
+    <p> {{ rest | json }} </p>
+    <h3> Restaurant Name: <input type="text" name="rest.name" [(ngModel)]="rest.name" placeholder="Rest's Name"></h3>
+    <h3> Cuisine: <input type="text" name="rest.cuisine" [(ngModel)]="rest.cuisine" placeholder="Rest cuisine"></h3>
+    <button type="submit">Submit</button>
+  </form>
+  <button [routerLink]="['/']" >Cancel</button> 
+
+<router-outlet></router-outlet> 
